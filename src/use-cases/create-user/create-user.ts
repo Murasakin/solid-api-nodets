@@ -17,7 +17,7 @@ export class CreateUser {
 
     await this.usersRepository.save(user);
 
-    this.emailProvider.sendMail({
+    await this.emailProvider.sendMail({
       to: {
         name: command.name,
         email: command.email,
